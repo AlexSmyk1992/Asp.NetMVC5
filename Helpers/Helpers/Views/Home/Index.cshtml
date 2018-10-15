@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Html.BeginForm("GetForm", "Home", FormMethod.Post))
+{
+    @Html.TextArea("text", "Hello world", 5, 50, null); @*<textarea cols="20" id="text" name="text" rows="2">Hello <br /> world"</textarea>*@
+    <input type="submit" name="name" value="Send" />
+
+    @Html.RadioButton("color", "red")@*<input id="color" name="color" type="radio" value="red" /> <span>красный</span> <br />*@
+    <span>красный</span> <br />
+    @Html.RadioButton("color", "blue")
+    <span>синий</span> <br />
+    @Html.RadioButton("color", "green", true)
+    <span>зеленый</span>
+
+    @*<input id="Enable" name="Enable" type="checkbox" value="true" />
+        <input name = "Enable" type = "hidden" value = "false" />*@
+    @Html.CheckBox("set", false) <span>Enable</span>
+
+    @Html.DropDownList("author", ViewBag.Authors as SelectList)
+
+    @*@Html.ListBox("countires", new MultiSelectList(new string[] { "Россия", "США", "Китай", "Индия" }))*@
+
+
+
+}
