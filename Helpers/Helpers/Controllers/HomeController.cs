@@ -14,17 +14,22 @@ namespace Helpers.Controllers
         public ActionResult Index()
         {
             var books = db.Books;
-            SelectList authors = new SelectList(db.Books, "Author", "Name");
-            ViewBag.Authors = authors;
-            return View();
+            //SelectList authors = new SelectList(db.Books, "Author", "Name");
+            //ViewBag.Authors = authors;
+            return View(db.Books);
+        }
+        protected override void Dispose(bool disposing)
+        {
+            db.Dispose();
+            base.Dispose(disposing);
         }
 
-        [HttpPost]
-        public string GetForm(string author)
-        {
-            return author;
-        }
-        
+        //[HttpPost]
+        //public string GetForm(string author)
+        //{
+        //    return author;
+        //}
+
         //public string GetForm(string[] countries)
         //{
         //    string result = "";
@@ -36,19 +41,19 @@ namespace Helpers.Controllers
         //    return "Вы выбрали: " + result;
         //}
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+        //public ActionResult About()
+        //{
+        //    ViewBag.Message = "Your application description page.";
 
-            return View();
-        }
+        //    return View();
+        //}
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+        //public ActionResult Contact()
+        //{
+        //    ViewBag.Message = "Your contact page.";
 
-            return View();
-        }
+        //    return View();
+        //}
 
 
         //[HttpPost]

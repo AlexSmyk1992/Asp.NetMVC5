@@ -1,27 +1,24 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model IEnumerable<Helpers.Models.Book>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-@using (Html.BeginForm("GetForm", "Home", FormMethod.Post))
-{
-    @Html.TextArea("text", "Hello world", 5, 50, null); @*<textarea cols="20" id="text" name="text" rows="2">Hello <br /> world"</textarea>*@
-    <input type="submit" name="name" value="Send" />
-
-    @Html.RadioButton("color", "red")@*<input id="color" name="color" type="radio" value="red" /> <span>красный</span> <br />*@
-    <span>красный</span> <br />
-    @Html.RadioButton("color", "blue")
-    <span>синий</span> <br />
-    @Html.RadioButton("color", "green", true)
-    <span>зеленый</span>
-
-    @*<input id="Enable" name="Enable" type="checkbox" value="true" />
-        <input name = "Enable" type = "hidden" value = "false" />*@
-    @Html.CheckBox("set", false) <span>Enable</span>
-
-    @Html.DropDownList("author", ViewBag.Authors as SelectList)
-
-    @*@Html.ListBox("countires", new MultiSelectList(new string[] { "Россия", "США", "Китай", "Индия" }))*@
-
-
-
-}
+<div>
+    <h3>Распродажа книг</h3>
+    <table>
+        <tr class="header">
+            <td><p>Название книги</p></td>
+            <td><p>Автор</p></td>
+            <td><p>Цена</p></td>
+            <td></td>
+        </tr>
+        @foreach (Helpers.Models.Book b in Model)
+        {
+            <tr>
+                <td><p>@b.Name</p></td>
+                <td><p>@b.Author</p></td>
+                <td><p>@b.Price</p></td>
+                <td><p><a href="/Home/Buy/@b.Id">Купить</a></p></td>
+            </tr>
+        }
+    </table>
+</div>
