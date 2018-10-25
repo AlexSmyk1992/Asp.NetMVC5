@@ -92,3 +92,4 @@ C:\Users\asmyk.npe\Desktop\Asp.NetMVC5\Helpers\Helpers\obj\Debug\Helpers.csproj.
 C:\Users\asmyk.npe\Desktop\Asp.NetMVC5\Helpers\Helpers\obj\Debug\Helpers.csproj.CopyComplete
 C:\Users\asmyk.npe\Desktop\Asp.NetMVC5\Helpers\Helpers\obj\Debug\Helpers.dll
 C:\Users\asmyk.npe\Desktop\Asp.NetMVC5\Helpers\Helpers\obj\Debug\Helpers.pdb
+C:\Users\asmyk.npe\Desktop\Asp.NetMVC5\Helpers\Helpers\obj\Debug\Helpers.csprojAssemblyReference.cache

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<CoffeeApp.Models.Coffee>
+@{
+    ViewBag.List = "Index";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List of coffee</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Name)*@Название
+        </th>
+
+        <th>           
+        </th>
+
+        <th>
+            @*@Html.DisplayNameFor(model => model.Volume)*@Объем
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Price)*@Цена
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            <img class="coffee" src="https://st.depositphotos.com/1000504/1211/i/450/depositphotos_12112309-stock-photo-cup-of-coffee.jpg" width="50" height="30" alt="pct" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Volume) ml
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price) BYN
+        </td>
+        <td>
+            @Html.ActionLink("Ред.", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
+        </td>
+    </tr>
+    }
+
+</table>
