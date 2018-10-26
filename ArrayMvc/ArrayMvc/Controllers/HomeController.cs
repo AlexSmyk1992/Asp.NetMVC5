@@ -47,7 +47,7 @@ namespace ArrayMvc.Controllers
             return View();
         }
 
-
+         
         [HttpGet]
         public ActionResult Array()
         {
